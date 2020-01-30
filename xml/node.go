@@ -6,10 +6,11 @@ import "C"
 
 import (
 	"errors"
-	. "github.com/moovweb/gokogiri/util"
-	"github.com/moovweb/gokogiri/xpath"
 	"strconv"
 	"unsafe"
+
+	. "github.com/kyuden/gokogiri/util"
+	"github.com/kyuden/gokogiri/xpath"
 )
 
 var (

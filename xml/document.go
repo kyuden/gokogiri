@@ -9,11 +9,12 @@ import "C"
 
 import (
 	"errors"
-	"github.com/moovweb/gokogiri/help"
-	. "github.com/moovweb/gokogiri/util"
-	"github.com/moovweb/gokogiri/xpath"
 	"os"
 	"unsafe"
+
+	"github.com/kyuden/gokogiri/help"
+	. "github.com/kyuden/gokogiri/util"
+	"github.com/kyuden/gokogiri/xpath"
 )
 
 type Document interface {
@@ -327,7 +328,7 @@ func (document *XmlDocument) CreateTextNode(data string) (text *TextNode) {
 	dataPtr := unsafe.Pointer(&dataBytes[0])
 	nodePtr := C.xmlNewText((*C.xmlChar)(dataPtr))
 	if nodePtr != nil {
-		nodePtr.doc = (*_Ctype_struct__xmlDoc)(document.DocPtr())
+		nodePtr.doc = (*C.xmlChar)(document.DocPtr())
 		text = NewNode(unsafe.Pointer(nodePtr), document).(*TextNode)
 	}
 	return

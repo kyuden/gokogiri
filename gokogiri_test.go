@@ -1,8 +1,9 @@
 package gokogiri
 
 import (
-	"github.com/moovweb/gokogiri/help"
 	"testing"
+
+	"github.com/kyuden/gokogiri/help"
 )
 
 func TestParseHtml(t *testing.T) {
